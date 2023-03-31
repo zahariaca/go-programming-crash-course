@@ -3,22 +3,25 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math/rand"
 	"os"
+	"time"
 )
 
 const prompt = "and press ENTER when ready"
 
 func main() {
 
+	rand.Seed(time.Now().UnixMicro())
 	// one way - declare, then assign (two steps)
 	var firstNumber int
-	firstNumber = 2
+	firstNumber = rand.Intn(8) + 2
 
 	// another way, declare type and name and assign value
-	var secondNumber = 5
+	var secondNumber = rand.Intn(8) + 2
 
 	// one step variable: declare name, assign value and let go figure out the type
-	subtraction := 7
+	subtraction := rand.Intn(8) + 2
 
 	var answer int
 
