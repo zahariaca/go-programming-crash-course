@@ -3,11 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello world")
-	fmt.Print("This is some text")
-	fmt.Print("This is some  more text")
-	sayHelloWorld("")
-	sayHelloWorld("Hello World, again!")
+	var whatToSay string
+	whatToSay = "Hello world, again"
+
+	shortHandVariable := "Hello world, again from shorthand"
+
+	sayHelloWorld(whatToSay)
+	sayHelloWorld(shortHandVariable)
 }
 
 func sayHelloWorld(whatToSay string) {
