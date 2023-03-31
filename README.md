@@ -39,3 +39,7 @@ const variableName = "Some constant"
 fmt.Println("Now multiply the result by", secondNumber, prompt)
 ```
 
+### varible name to access level
+
+If a variable has its first letter as a capital letter, e.g: `var PublicVar` then it is publicly accessible, otherwise, e.g: `var privateVar` it is only accessible inside the package where it was declared
+Same applies for functions
