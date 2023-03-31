@@ -26,18 +26,20 @@ func main() {
 	var answer int
 	answer = firstNumber*secondNumber - subtraction
 
-	reader := bufio.NewReader(os.Stdin)
-
 	// display a welcome/instruction
+	// take them through the games
+	// give them the answer
+	playTheGame(firstNumber, secondNumber, subtraction, answer)
+}
 
+func playTheGame(firstNumber int, secondNumber int, subtraction int, answer int) {
+	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Guess the Number Game")
 	fmt.Println("---------------------")
 	fmt.Println()
 
 	fmt.Println("Think of a number between 1 and 10", prompt)
 	reader.ReadString('\n')
-
-	//take them through the games
 
 	fmt.Println("Multiply your number by", firstNumber, prompt)
 	reader.ReadString('\n')
@@ -50,8 +52,5 @@ func main() {
 
 	fmt.Println("Now subtract", subtraction, prompt)
 
-	// give them the answer
-
 	fmt.Println("The answer is", answer)
-
 }
