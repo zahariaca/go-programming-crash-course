@@ -1,17 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"myapp/doctor"
+)
 
 func main() {
 	var whatToSay string
-	whatToSay = "Hello world, again"
 
-	shortHandVariable := "Hello world, again from shorthand"
+	whatToSay = doctor.Intro()
 
-	sayHelloWorld(whatToSay)
-	sayHelloWorld(shortHandVariable)
-}
-
-func sayHelloWorld(whatToSay string) {
 	fmt.Println(whatToSay)
 }
