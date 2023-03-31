@@ -26,3 +26,16 @@ variableName := "some string"
 go build -o name main.go
 go build -o name.exe main.go
 ```
+
+### declaring a const
+
+```
+const variableName = "Some constant"
+```
+
+### string concatenation for printing
+
+```
+fmt.Println("Now multiply the result by", secondNumber, prompt)
+```
+
