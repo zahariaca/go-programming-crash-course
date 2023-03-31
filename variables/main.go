@@ -24,6 +24,7 @@ func main() {
 	subtraction := rand.Intn(8) + 2
 
 	var answer int
+	answer = firstNumber*secondNumber - subtraction
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -50,8 +51,6 @@ func main() {
 	fmt.Println("Now subtract", subtraction, prompt)
 
 	// give them the answer
-
-	answer = firstNumber*secondNumber - subtraction
 
 	fmt.Println("The answer is", answer)
 
