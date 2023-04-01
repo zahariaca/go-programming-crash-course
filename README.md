@@ -80,4 +80,7 @@ i, _ := strconv.Atoi(string(char))
 fmt.Sprintf("You chose %s", string)
 fmt.Sprintf("You chose %q", char)
 fmt.Sprintf("You chose %d", int)
+
+fmt.Println(fmt.Sprintf("Your name is %s. You are %d years old", userName, age))
+fmt.Printf("Your name is %s. You are %d years old\n", userName, age)
 ```
