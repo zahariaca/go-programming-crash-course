@@ -56,4 +56,28 @@ defer func() {
 	}()
 ```
 
-### 
+### create a map with int keys and string values and put into it
+
+```
+coffees := make(map[int]string)
+coffees[1] = "Cappucino"
+coffees[2] = "Latte"
+coffees[3] = "Americano"
+coffees[4] = "Mocha"
+coffees[5] = "Macchiato"
+coffees[6] = "Espresso"
+```
+
+### char/rune to int
+
+```
+i, _ := strconv.Atoi(string(char))
+```
+
+### format a string with specifier
+
+```
+fmt.Sprintf("You chose %s", string)
+fmt.Sprintf("You chose %q", char)
+fmt.Sprintf("You chose %d", int)
+```
