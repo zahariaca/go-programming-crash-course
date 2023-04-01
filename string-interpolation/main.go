@@ -3,9 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/eiannone/keyboard"
 )
 
 var reader *bufio.Reader
@@ -19,17 +22,18 @@ type User struct {
 
 func main() {
 	reader = bufio.NewReader(os.Stdin)
-
 	var user User
 
 	user.UserName = readString("What is your name?")
 	user.Age = readInt("How old are you?")
 	user.FavoriteNumber = readFloat("What is your favorite number?")
+	user.OwnsADog = readBool("Do you own a dog (y/n)?")
 
-	fmt.Printf("Your name is %s. You are %d years old. Your Favorite number is %2f\n",
+	fmt.Printf("Your name is %s. You are %d years old. Your Favorite number is %2f. Dog owner: %t\n",
 		user.UserName,
 		user.Age,
-		user.FavoriteNumber)
+		user.FavoriteNumber,
+		user.OwnsADog)
 }
 
 func prompt() {
@@ -81,5 +85,35 @@ func readFloat(s string) float64 {
 			return num
 		}
 
+	}
+}
+
+func readBool(s string) bool {
+	err := keyboard.Open()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer func() {
+		_ = keyboard.Close()
+	}()
+
+	for {
+		fmt.Println(s)
+		prompt()
+		char, _, err := keyboard.GetSingleKey()
+
+		if err != nil {
+			fmt.Println("Please y/Y or n/N.")
+		}
+
+		if char == 'y' || char == 'Y' {
+			return true
+		} else if char == 'n' || char == 'N' {
+			return false
+		} else {
+			fmt.Println("Please type y/Y or n/N.")
+		}
 	}
 }
